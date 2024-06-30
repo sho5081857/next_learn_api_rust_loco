@@ -1,0 +1,39 @@
+version: "3"
+
+tasks:
+  build:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml build
+
+  up:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml up -d
+
+  down:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml down --remove-orphans
+
+  down-v:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml down --remove-orphans --volumes
+
+  stop:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml stop
+
+  restart:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml down --remove-orphans
+      - docker compose -f ./.devcontainer/compose.yaml up -d
+
+  destroy:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml down --rmi all --volumes --remove-orphans
+
+  ps:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml ps
+
+  db:
+    cmds:
+      - docker compose -f ./.devcontainer/compose.yaml exec db bash
