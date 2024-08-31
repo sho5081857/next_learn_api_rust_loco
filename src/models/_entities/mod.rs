@@ -2,6 +2,8 @@
 
 pub mod prelude;
 
+pub mod customers;
+pub mod invoices;
 pub mod notes;
 pub mod revenues;
 pub mod users;
