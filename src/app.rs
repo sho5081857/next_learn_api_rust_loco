@@ -44,8 +44,10 @@ impl Hooks for App {
 
     fn routes(_ctx: &AppContext) -> AppRoutes {
         AppRoutes::with_default_routes()
-            .add_route(controllers::revenue::routes())
             .prefix("/api")
+            .add_route(controllers::invoice::routes())
+            .add_route(controllers::customer::routes())
+            .add_route(controllers::revenue::routes())
             .add_route(controllers::notes::routes())
             .add_route(controllers::auth::routes())
             .add_route(controllers::user::routes())
