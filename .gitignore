@@ -21,3 +21,4 @@ target/
 .github/
 _command
 _tools
+.vscode
